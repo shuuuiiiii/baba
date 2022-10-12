@@ -1,5 +1,3 @@
-wer = wert
-while wer do
 task.wait()
                     local function getRoot(char)
     pcall(
@@ -17,7 +15,6 @@ _G.aas = true
 local function loopbring(player, on_off_value)
     table.insert(targets, player)
     for i, v in ipairs(targets) do
-        print(v)
     end
     if on_off_value == true then
         _G.aas = true
@@ -28,18 +25,13 @@ end
 loopbring((Valuesse), true)
 while _G.aas == true do
     task.wait()
-    pcall(
-        function()
+    pcall(function()
             for i, v in ipairs(targets) do
                 if game.Players[v].Character:FindFirstChild("ForceField") then
                 elseif game.Players.LocalPlayer.Character:FindFirstChild("ForceField") then
                 else
-            getRoot(Players[v].Character).CFrame =
-                        getRoot(Players.LocalPlayer.Character).CFrame +
-                        getRoot(Players.LocalPlayer.Character).CFrame.lookVector * 3
+            getRoot(Players[v].Character).CFrame = getRoot(Players.LocalPlayer.Character).CFrame + getRoot(Players.LocalPlayer.Character).CFrame.lookVector * 4
                 end
             end
-        end
-    )
-end
+        end)
 end
