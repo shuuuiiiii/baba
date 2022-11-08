@@ -1,38 +1,55 @@
-local ScreenGui = Instance.new("ScreenGui")
-local cbringf = Instance.new("Frame")
+local cbring = Instance.new("ScreenGui")
+local Frame = Instance.new("Frame")
 local UICorner = Instance.new("UICorner")
 local n1 = Instance.new("TextBox")
 local UICorner_2 = Instance.new("UICorner")
 local add = Instance.new("TextButton")
 local UICorner_3 = Instance.new("UICorner")
-ScreenGui.Parent = game.CoreGui
-ScreenGui.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
-cbringf.Name = "cbringf"
-cbringf.Parent = ScreenGui
-cbringf.BackgroundColor3 = Color3.fromRGB(31, 31, 31)
-cbringf.Position = UDim2.new(0.0904347822, 0, 0.92073977, 0)
-cbringf.Size = UDim2.new(0, 158, 0, 51)
-UICorner.Parent = cbringf
+local cle = Instance.new("TextButton")
+local UICorner_4 = Instance.new("UICorner")
+local up = Instance.new("TextButton")
+local UICorner_5 = Instance.new("UICorner")
+local pl = Instance.new("Frame")
+local UICorner_6 = Instance.new("UICorner")
+local ScrollingFrame = Instance.new("ScrollingFrame")
+local pll = Instance.new("TextLabel")
+local TextLabel = Instance.new("TextLabel")
+local down = Instance.new("TextButton")
+local UICorner_7 = Instance.new("UICorner")
+
+--Properties:
+
+cbring.Name = "cbring"
+cbring.Parent = game.CoreGui
+cbring.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+
+Frame.Parent = cbring
+Frame.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+Frame.Position = UDim2.new(0.026956521, 0, 0.922060788, 0)
+Frame.Size = UDim2.new(0, 250, 0, 47)
+
+UICorner.Parent = Frame
+
 n1.Name = "n1"
-n1.Parent = cbringf
-n1.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
-n1.ClipsDescendants = true
-n1.Position = UDim2.new(0.0379746817, 0, 0.0980392173, 0)
-n1.Size = UDim2.new(0, 102, 0, 41)
+n1.Parent = Frame
+n1.BackgroundColor3 = Color3.fromRGB(24, 24, 24)
+n1.Position = UDim2.new(0.0399999991, 0, 0.127659574, 0)
+n1.Size = UDim2.new(0, 130, 0, 35)
 n1.ClearTextOnFocus = false
 n1.Font = Enum.Font.SourceSansBold
-n1.Text = "Nick"
+n1.Text = "Pizda"
 n1.TextColor3 = Color3.fromRGB(255, 255, 255)
 n1.TextScaled = true
 n1.TextSize = 14.000
 n1.TextWrapped = true
-n1.TextXAlignment = Enum.TextXAlignment.Left
+
 UICorner_2.Parent = n1
+
 add.Name = "add"
-add.Parent = cbringf
-add.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
-add.Position = UDim2.new(0.734177232, 0, 0.0980392173, 0)
-add.Size = UDim2.new(0, 36, 0, 41)
+add.Parent = Frame
+add.BackgroundColor3 = Color3.fromRGB(31, 31, 31)
+add.Position = UDim2.new(0.596000016, 0, 0.127659574, 0)
+add.Size = UDim2.new(0, 35, 0, 35)
 add.Font = Enum.Font.SourceSansBold
 add.Text = "+"
 add.TextColor3 = Color3.fromRGB(255, 255, 255)
@@ -53,20 +70,20 @@ end)
 end
 local targets = {}
 local Players = game:GetService("Players")
-_G.aas = true
+_G.cbrrrr = true
 local function loopbring(player, on_off_value)
     table.insert(targets, player)
     for i, v in ipairs(targets) do
         print(v)
     end
     if on_off_value == true then
-        _G.aas = true
+        _G.cbrrrr = true
     elseif on_off_value == false then
-        _G.aas = false
+        _G.cbrrrr = false
     end
 end
 loopbring((n1.Text), true)
-while _G.aas == true do
+while _G.cbrrrr == true do
     task.wait()
     pcall(function()
             for i, v in ipairs(targets) do
@@ -82,5 +99,23 @@ end)
 end
 end
 end)
-UICorner_3.CornerRadius = UDim.new(1, 1)
+
 UICorner_3.Parent = add
+
+cle.Name = "cle"
+cle.Parent = Frame
+cle.BackgroundColor3 = Color3.fromRGB(31, 31, 31)
+cle.Position = UDim2.new(0.776000023, 0, 0.127659574, 0)
+cle.Size = UDim2.new(0, 35, 0, 35)
+cle.Font = Enum.Font.SourceSansBold
+cle.Text = "-"
+cle.TextColor3 = Color3.fromRGB(255, 255, 255)
+cle.TextScaled = true
+cle.TextSize = 14.000
+cle.TextWrapped = true
+cle.MouseButton1Click:Connect(function()
+   _G.ll = false
+   _G.cbrrrr = false
+end)
+
+UICorner_4.Parent = cle
